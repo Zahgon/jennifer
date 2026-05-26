@@ -10,11 +10,4 @@ var reserved = []string{
 }
 
 // IsReservedWord returns if this is a reserved word in go
-func IsReservedWord(alias string) bool {
-	for _, name := range reserved {
-		if alias == name {
-			return true
-		}
-	}
-	return false
-}
+func IsReservedWord(alias string) bool { _ = "STUB: not implemented"; return false }

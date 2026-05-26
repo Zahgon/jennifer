@@ -3,2556 +3,1393 @@
 package jen
 
 // Parens renders a single item in parenthesis. Use for type conversion or to specify evaluation order.
-func Parens(item Code) *Statement {
-	return newStatement().Parens(item)
-}
+func Parens(item Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Parens renders a single item in parenthesis. Use for type conversion or to specify evaluation order.
-func (g *Group) Parens(item Code) *Statement {
-	s := Parens(item)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Parens(item Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Parens renders a single item in parenthesis. Use for type conversion or to specify evaluation order.
-func (s *Statement) Parens(item Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     []Code{item},
-		multi:     false,
-		name:      "parens",
-		open:      "(",
-		separator: "",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Parens(item Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // List renders a comma separated list. Use for multiple return functions.
-func List(items ...Code) *Statement {
-	return newStatement().List(items...)
-}
+func List(items ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // List renders a comma separated list. Use for multiple return functions.
-func (g *Group) List(items ...Code) *Statement {
-	s := List(items...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) List(items ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // List renders a comma separated list. Use for multiple return functions.
-func (s *Statement) List(items ...Code) *Statement {
-	g := &Group{
-		close:     "",
-		items:     items,
-		multi:     false,
-		name:      "list",
-		open:      "",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) List(items ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // ListFunc renders a comma separated list. Use for multiple return functions.
-func ListFunc(f func(*Group)) *Statement {
-	return newStatement().ListFunc(f)
-}
+func ListFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // ListFunc renders a comma separated list. Use for multiple return functions.
-func (g *Group) ListFunc(f func(*Group)) *Statement {
-	s := ListFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) ListFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // ListFunc renders a comma separated list. Use for multiple return functions.
-func (s *Statement) ListFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     "",
-		multi:     false,
-		name:      "list",
-		open:      "",
-		separator: ",",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) ListFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Values renders a comma separated list enclosed by curly braces. Use for slice or composite literals.
-func Values(values ...Code) *Statement {
-	return newStatement().Values(values...)
-}
+func Values(values ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Values renders a comma separated list enclosed by curly braces. Use for slice or composite literals.
-func (g *Group) Values(values ...Code) *Statement {
-	s := Values(values...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Values(values ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Values renders a comma separated list enclosed by curly braces. Use for slice or composite literals.
-func (s *Statement) Values(values ...Code) *Statement {
-	g := &Group{
-		close:     "}",
-		items:     values,
-		multi:     false,
-		name:      "values",
-		open:      "{",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Values(values ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // ValuesFunc renders a comma separated list enclosed by curly braces. Use for slice or composite literals.
-func ValuesFunc(f func(*Group)) *Statement {
-	return newStatement().ValuesFunc(f)
-}
+func ValuesFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // ValuesFunc renders a comma separated list enclosed by curly braces. Use for slice or composite literals.
-func (g *Group) ValuesFunc(f func(*Group)) *Statement {
-	s := ValuesFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) ValuesFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // ValuesFunc renders a comma separated list enclosed by curly braces. Use for slice or composite literals.
-func (s *Statement) ValuesFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     "}",
-		multi:     false,
-		name:      "values",
-		open:      "{",
-		separator: ",",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) ValuesFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Index renders a colon separated list enclosed by square brackets. Use for array / slice indexes and definitions.
-func Index(items ...Code) *Statement {
-	return newStatement().Index(items...)
-}
+func Index(items ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Index renders a colon separated list enclosed by square brackets. Use for array / slice indexes and definitions.
-func (g *Group) Index(items ...Code) *Statement {
-	s := Index(items...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Index(items ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Index renders a colon separated list enclosed by square brackets. Use for array / slice indexes and definitions.
-func (s *Statement) Index(items ...Code) *Statement {
-	g := &Group{
-		close:     "]",
-		items:     items,
-		multi:     false,
-		name:      "index",
-		open:      "[",
-		separator: ":",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Index(items ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // IndexFunc renders a colon separated list enclosed by square brackets. Use for array / slice indexes and definitions.
-func IndexFunc(f func(*Group)) *Statement {
-	return newStatement().IndexFunc(f)
-}
+func IndexFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // IndexFunc renders a colon separated list enclosed by square brackets. Use for array / slice indexes and definitions.
-func (g *Group) IndexFunc(f func(*Group)) *Statement {
-	s := IndexFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) IndexFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // IndexFunc renders a colon separated list enclosed by square brackets. Use for array / slice indexes and definitions.
-func (s *Statement) IndexFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     "]",
-		multi:     false,
-		name:      "index",
-		open:      "[",
-		separator: ":",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) IndexFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Block renders a statement list enclosed by curly braces. Use for code blocks. A special case applies when used directly after Case or Default, where the braces are omitted. This allows use in switch and select statements.
-func Block(statements ...Code) *Statement {
-	return newStatement().Block(statements...)
-}
+func Block(statements ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Block renders a statement list enclosed by curly braces. Use for code blocks. A special case applies when used directly after Case or Default, where the braces are omitted. This allows use in switch and select statements.
-func (g *Group) Block(statements ...Code) *Statement {
-	s := Block(statements...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Block(statements ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Block renders a statement list enclosed by curly braces. Use for code blocks. A special case applies when used directly after Case or Default, where the braces are omitted. This allows use in switch and select statements.
-func (s *Statement) Block(statements ...Code) *Statement {
-	g := &Group{
-		close:     "}",
-		items:     statements,
-		multi:     true,
-		name:      "block",
-		open:      "{",
-		separator: "",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Block(statements ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // BlockFunc renders a statement list enclosed by curly braces. Use for code blocks. A special case applies when used directly after Case or Default, where the braces are omitted. This allows use in switch and select statements.
-func BlockFunc(f func(*Group)) *Statement {
-	return newStatement().BlockFunc(f)
-}
+func BlockFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // BlockFunc renders a statement list enclosed by curly braces. Use for code blocks. A special case applies when used directly after Case or Default, where the braces are omitted. This allows use in switch and select statements.
-func (g *Group) BlockFunc(f func(*Group)) *Statement {
-	s := BlockFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) BlockFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // BlockFunc renders a statement list enclosed by curly braces. Use for code blocks. A special case applies when used directly after Case or Default, where the braces are omitted. This allows use in switch and select statements.
-func (s *Statement) BlockFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     "}",
-		multi:     true,
-		name:      "block",
-		open:      "{",
-		separator: "",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) BlockFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Defs renders a statement list enclosed in parenthesis. Use for definition lists.
-func Defs(definitions ...Code) *Statement {
-	return newStatement().Defs(definitions...)
-}
+func Defs(definitions ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Defs renders a statement list enclosed in parenthesis. Use for definition lists.
-func (g *Group) Defs(definitions ...Code) *Statement {
-	s := Defs(definitions...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Defs(definitions ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Defs renders a statement list enclosed in parenthesis. Use for definition lists.
-func (s *Statement) Defs(definitions ...Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     definitions,
-		multi:     true,
-		name:      "defs",
-		open:      "(",
-		separator: "",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Defs(definitions ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // DefsFunc renders a statement list enclosed in parenthesis. Use for definition lists.
-func DefsFunc(f func(*Group)) *Statement {
-	return newStatement().DefsFunc(f)
-}
+func DefsFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // DefsFunc renders a statement list enclosed in parenthesis. Use for definition lists.
-func (g *Group) DefsFunc(f func(*Group)) *Statement {
-	s := DefsFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) DefsFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // DefsFunc renders a statement list enclosed in parenthesis. Use for definition lists.
-func (s *Statement) DefsFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     ")",
-		multi:     true,
-		name:      "defs",
-		open:      "(",
-		separator: "",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) DefsFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Call renders a comma separated list enclosed by parenthesis. Use for function calls.
-func Call(params ...Code) *Statement {
-	return newStatement().Call(params...)
-}
+func Call(params ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Call renders a comma separated list enclosed by parenthesis. Use for function calls.
-func (g *Group) Call(params ...Code) *Statement {
-	s := Call(params...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Call(params ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Call renders a comma separated list enclosed by parenthesis. Use for function calls.
-func (s *Statement) Call(params ...Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     params,
-		multi:     false,
-		name:      "call",
-		open:      "(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Call(params ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // CallFunc renders a comma separated list enclosed by parenthesis. Use for function calls.
-func CallFunc(f func(*Group)) *Statement {
-	return newStatement().CallFunc(f)
-}
+func CallFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // CallFunc renders a comma separated list enclosed by parenthesis. Use for function calls.
-func (g *Group) CallFunc(f func(*Group)) *Statement {
-	s := CallFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) CallFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // CallFunc renders a comma separated list enclosed by parenthesis. Use for function calls.
-func (s *Statement) CallFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     ")",
-		multi:     false,
-		name:      "call",
-		open:      "(",
-		separator: ",",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) CallFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Params renders a comma separated list enclosed by parenthesis. Use for function parameters and method receivers.
-func Params(params ...Code) *Statement {
-	return newStatement().Params(params...)
-}
+func Params(params ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Params renders a comma separated list enclosed by parenthesis. Use for function parameters and method receivers.
-func (g *Group) Params(params ...Code) *Statement {
-	s := Params(params...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Params(params ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Params renders a comma separated list enclosed by parenthesis. Use for function parameters and method receivers.
-func (s *Statement) Params(params ...Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     params,
-		multi:     false,
-		name:      "params",
-		open:      "(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Params(params ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // ParamsFunc renders a comma separated list enclosed by parenthesis. Use for function parameters and method receivers.
-func ParamsFunc(f func(*Group)) *Statement {
-	return newStatement().ParamsFunc(f)
-}
+func ParamsFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // ParamsFunc renders a comma separated list enclosed by parenthesis. Use for function parameters and method receivers.
-func (g *Group) ParamsFunc(f func(*Group)) *Statement {
-	s := ParamsFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) ParamsFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // ParamsFunc renders a comma separated list enclosed by parenthesis. Use for function parameters and method receivers.
-func (s *Statement) ParamsFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     ")",
-		multi:     false,
-		name:      "params",
-		open:      "(",
-		separator: ",",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) ParamsFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Assert renders a period followed by a single item enclosed by parenthesis. Use for type assertions.
-func Assert(typ Code) *Statement {
-	return newStatement().Assert(typ)
-}
+func Assert(typ Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Assert renders a period followed by a single item enclosed by parenthesis. Use for type assertions.
-func (g *Group) Assert(typ Code) *Statement {
-	s := Assert(typ)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Assert(typ Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Assert renders a period followed by a single item enclosed by parenthesis. Use for type assertions.
-func (s *Statement) Assert(typ Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     []Code{typ},
-		multi:     false,
-		name:      "assert",
-		open:      ".(",
-		separator: "",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Assert(typ Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Map renders the keyword followed by a single item enclosed by square brackets. Use for map definitions.
-func Map(typ Code) *Statement {
-	return newStatement().Map(typ)
-}
+func Map(typ Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Map renders the keyword followed by a single item enclosed by square brackets. Use for map definitions.
-func (g *Group) Map(typ Code) *Statement {
-	s := Map(typ)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Map(typ Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Map renders the keyword followed by a single item enclosed by square brackets. Use for map definitions.
-func (s *Statement) Map(typ Code) *Statement {
-	g := &Group{
-		close:     "]",
-		items:     []Code{typ},
-		multi:     false,
-		name:      "map",
-		open:      "map[",
-		separator: "",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Map(typ Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // If renders the keyword followed by a semicolon separated list.
-func If(conditions ...Code) *Statement {
-	return newStatement().If(conditions...)
-}
+func If(conditions ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // If renders the keyword followed by a semicolon separated list.
-func (g *Group) If(conditions ...Code) *Statement {
-	s := If(conditions...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) If(conditions ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // If renders the keyword followed by a semicolon separated list.
-func (s *Statement) If(conditions ...Code) *Statement {
-	g := &Group{
-		close:     "",
-		items:     conditions,
-		multi:     false,
-		name:      "if",
-		open:      "if ",
-		separator: ";",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) If(conditions ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // IfFunc renders the keyword followed by a semicolon separated list.
-func IfFunc(f func(*Group)) *Statement {
-	return newStatement().IfFunc(f)
-}
+func IfFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // IfFunc renders the keyword followed by a semicolon separated list.
-func (g *Group) IfFunc(f func(*Group)) *Statement {
-	s := IfFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) IfFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // IfFunc renders the keyword followed by a semicolon separated list.
-func (s *Statement) IfFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     "",
-		multi:     false,
-		name:      "if",
-		open:      "if ",
-		separator: ";",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) IfFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Return renders the keyword followed by a comma separated list.
-func Return(results ...Code) *Statement {
-	return newStatement().Return(results...)
-}
+func Return(results ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Return renders the keyword followed by a comma separated list.
-func (g *Group) Return(results ...Code) *Statement {
-	s := Return(results...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Return(results ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Return renders the keyword followed by a comma separated list.
-func (s *Statement) Return(results ...Code) *Statement {
-	g := &Group{
-		close:     "",
-		items:     results,
-		multi:     false,
-		name:      "return",
-		open:      "return ",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Return(results ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // ReturnFunc renders the keyword followed by a comma separated list.
-func ReturnFunc(f func(*Group)) *Statement {
-	return newStatement().ReturnFunc(f)
-}
+func ReturnFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // ReturnFunc renders the keyword followed by a comma separated list.
-func (g *Group) ReturnFunc(f func(*Group)) *Statement {
-	s := ReturnFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) ReturnFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // ReturnFunc renders the keyword followed by a comma separated list.
-func (s *Statement) ReturnFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     "",
-		multi:     false,
-		name:      "return",
-		open:      "return ",
-		separator: ",",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) ReturnFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // For renders the keyword followed by a semicolon separated list.
-func For(conditions ...Code) *Statement {
-	return newStatement().For(conditions...)
-}
+func For(conditions ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // For renders the keyword followed by a semicolon separated list.
-func (g *Group) For(conditions ...Code) *Statement {
-	s := For(conditions...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) For(conditions ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // For renders the keyword followed by a semicolon separated list.
-func (s *Statement) For(conditions ...Code) *Statement {
-	g := &Group{
-		close:     "",
-		items:     conditions,
-		multi:     false,
-		name:      "for",
-		open:      "for ",
-		separator: ";",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) For(conditions ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // ForFunc renders the keyword followed by a semicolon separated list.
-func ForFunc(f func(*Group)) *Statement {
-	return newStatement().ForFunc(f)
-}
+func ForFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // ForFunc renders the keyword followed by a semicolon separated list.
-func (g *Group) ForFunc(f func(*Group)) *Statement {
-	s := ForFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) ForFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // ForFunc renders the keyword followed by a semicolon separated list.
-func (s *Statement) ForFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     "",
-		multi:     false,
-		name:      "for",
-		open:      "for ",
-		separator: ";",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) ForFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Switch renders the keyword followed by a semicolon separated list.
-func Switch(conditions ...Code) *Statement {
-	return newStatement().Switch(conditions...)
-}
+func Switch(conditions ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Switch renders the keyword followed by a semicolon separated list.
-func (g *Group) Switch(conditions ...Code) *Statement {
-	s := Switch(conditions...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Switch(conditions ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Switch renders the keyword followed by a semicolon separated list.
-func (s *Statement) Switch(conditions ...Code) *Statement {
-	g := &Group{
-		close:     "",
-		items:     conditions,
-		multi:     false,
-		name:      "switch",
-		open:      "switch ",
-		separator: ";",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Switch(conditions ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // SwitchFunc renders the keyword followed by a semicolon separated list.
-func SwitchFunc(f func(*Group)) *Statement {
-	return newStatement().SwitchFunc(f)
-}
+func SwitchFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // SwitchFunc renders the keyword followed by a semicolon separated list.
-func (g *Group) SwitchFunc(f func(*Group)) *Statement {
-	s := SwitchFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) SwitchFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // SwitchFunc renders the keyword followed by a semicolon separated list.
-func (s *Statement) SwitchFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     "",
-		multi:     false,
-		name:      "switch",
-		open:      "switch ",
-		separator: ";",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) SwitchFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Interface renders the keyword followed by a method list enclosed by curly braces.
-func Interface(methods ...Code) *Statement {
-	return newStatement().Interface(methods...)
-}
+func Interface(methods ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Interface renders the keyword followed by a method list enclosed by curly braces.
-func (g *Group) Interface(methods ...Code) *Statement {
-	s := Interface(methods...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Interface(methods ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Interface renders the keyword followed by a method list enclosed by curly braces.
-func (s *Statement) Interface(methods ...Code) *Statement {
-	g := &Group{
-		close:     "}",
-		items:     methods,
-		multi:     true,
-		name:      "interface",
-		open:      "interface{",
-		separator: "",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Interface(methods ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // InterfaceFunc renders the keyword followed by a method list enclosed by curly braces.
-func InterfaceFunc(f func(*Group)) *Statement {
-	return newStatement().InterfaceFunc(f)
-}
+func InterfaceFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // InterfaceFunc renders the keyword followed by a method list enclosed by curly braces.
-func (g *Group) InterfaceFunc(f func(*Group)) *Statement {
-	s := InterfaceFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) InterfaceFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // InterfaceFunc renders the keyword followed by a method list enclosed by curly braces.
-func (s *Statement) InterfaceFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     "}",
-		multi:     true,
-		name:      "interface",
-		open:      "interface{",
-		separator: "",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) InterfaceFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Struct renders the keyword followed by a field list enclosed by curly braces.
-func Struct(fields ...Code) *Statement {
-	return newStatement().Struct(fields...)
-}
+func Struct(fields ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Struct renders the keyword followed by a field list enclosed by curly braces.
-func (g *Group) Struct(fields ...Code) *Statement {
-	s := Struct(fields...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Struct(fields ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Struct renders the keyword followed by a field list enclosed by curly braces.
-func (s *Statement) Struct(fields ...Code) *Statement {
-	g := &Group{
-		close:     "}",
-		items:     fields,
-		multi:     true,
-		name:      "struct",
-		open:      "struct{",
-		separator: "",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Struct(fields ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // StructFunc renders the keyword followed by a field list enclosed by curly braces.
-func StructFunc(f func(*Group)) *Statement {
-	return newStatement().StructFunc(f)
-}
+func StructFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // StructFunc renders the keyword followed by a field list enclosed by curly braces.
-func (g *Group) StructFunc(f func(*Group)) *Statement {
-	s := StructFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) StructFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // StructFunc renders the keyword followed by a field list enclosed by curly braces.
-func (s *Statement) StructFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     "}",
-		multi:     true,
-		name:      "struct",
-		open:      "struct{",
-		separator: "",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) StructFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Case renders the keyword followed by a comma separated list.
-func Case(cases ...Code) *Statement {
-	return newStatement().Case(cases...)
-}
+func Case(cases ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Case renders the keyword followed by a comma separated list.
-func (g *Group) Case(cases ...Code) *Statement {
-	s := Case(cases...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Case(cases ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Case renders the keyword followed by a comma separated list.
-func (s *Statement) Case(cases ...Code) *Statement {
-	g := &Group{
-		close:     ":",
-		items:     cases,
-		multi:     false,
-		name:      "case",
-		open:      "case ",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Case(cases ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // CaseFunc renders the keyword followed by a comma separated list.
-func CaseFunc(f func(*Group)) *Statement {
-	return newStatement().CaseFunc(f)
-}
+func CaseFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // CaseFunc renders the keyword followed by a comma separated list.
-func (g *Group) CaseFunc(f func(*Group)) *Statement {
-	s := CaseFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) CaseFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // CaseFunc renders the keyword followed by a comma separated list.
-func (s *Statement) CaseFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     ":",
-		multi:     false,
-		name:      "case",
-		open:      "case ",
-		separator: ",",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) CaseFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Append renders the append built-in function.
-func Append(args ...Code) *Statement {
-	return newStatement().Append(args...)
-}
+func Append(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Append renders the append built-in function.
-func (g *Group) Append(args ...Code) *Statement {
-	s := Append(args...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Append(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Append renders the append built-in function.
-func (s *Statement) Append(args ...Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     args,
-		multi:     false,
-		name:      "append",
-		open:      "append(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Append(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // AppendFunc renders the append built-in function.
-func AppendFunc(f func(*Group)) *Statement {
-	return newStatement().AppendFunc(f)
-}
+func AppendFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // AppendFunc renders the append built-in function.
-func (g *Group) AppendFunc(f func(*Group)) *Statement {
-	s := AppendFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) AppendFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // AppendFunc renders the append built-in function.
-func (s *Statement) AppendFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     ")",
-		multi:     false,
-		name:      "append",
-		open:      "append(",
-		separator: ",",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) AppendFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Cap renders the cap built-in function.
-func Cap(v Code) *Statement {
-	return newStatement().Cap(v)
-}
+func Cap(v Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Cap renders the cap built-in function.
-func (g *Group) Cap(v Code) *Statement {
-	s := Cap(v)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Cap(v Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Cap renders the cap built-in function.
-func (s *Statement) Cap(v Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     []Code{v},
-		multi:     false,
-		name:      "cap",
-		open:      "cap(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Cap(v Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Close renders the close built-in function.
-func Close(c Code) *Statement {
-	return newStatement().Close(c)
-}
+func Close(c Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Close renders the close built-in function.
-func (g *Group) Close(c Code) *Statement {
-	s := Close(c)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Close(c Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Close renders the close built-in function.
-func (s *Statement) Close(c Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     []Code{c},
-		multi:     false,
-		name:      "close",
-		open:      "close(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Close(c Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Clear renders the clear built-in function.
-func Clear(c Code) *Statement {
-	return newStatement().Clear(c)
-}
+func Clear(c Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Clear renders the clear built-in function.
-func (g *Group) Clear(c Code) *Statement {
-	s := Clear(c)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Clear(c Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Clear renders the clear built-in function.
-func (s *Statement) Clear(c Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     []Code{c},
-		multi:     false,
-		name:      "clear",
-		open:      "clear(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Clear(c Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Min renders the min built-in function.
-func Min(args ...Code) *Statement {
-	return newStatement().Min(args...)
-}
+func Min(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Min renders the min built-in function.
-func (g *Group) Min(args ...Code) *Statement {
-	s := Min(args...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Min(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Min renders the min built-in function.
-func (s *Statement) Min(args ...Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     args,
-		multi:     false,
-		name:      "min",
-		open:      "min(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Min(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // MinFunc renders the min built-in function.
-func MinFunc(f func(*Group)) *Statement {
-	return newStatement().MinFunc(f)
-}
+func MinFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // MinFunc renders the min built-in function.
-func (g *Group) MinFunc(f func(*Group)) *Statement {
-	s := MinFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) MinFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // MinFunc renders the min built-in function.
-func (s *Statement) MinFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     ")",
-		multi:     false,
-		name:      "min",
-		open:      "min(",
-		separator: ",",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) MinFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Max renders the max built-in function.
-func Max(args ...Code) *Statement {
-	return newStatement().Max(args...)
-}
+func Max(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Max renders the max built-in function.
-func (g *Group) Max(args ...Code) *Statement {
-	s := Max(args...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Max(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Max renders the max built-in function.
-func (s *Statement) Max(args ...Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     args,
-		multi:     false,
-		name:      "max",
-		open:      "max(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Max(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // MaxFunc renders the max built-in function.
-func MaxFunc(f func(*Group)) *Statement {
-	return newStatement().MaxFunc(f)
-}
+func MaxFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // MaxFunc renders the max built-in function.
-func (g *Group) MaxFunc(f func(*Group)) *Statement {
-	s := MaxFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) MaxFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // MaxFunc renders the max built-in function.
-func (s *Statement) MaxFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     ")",
-		multi:     false,
-		name:      "max",
-		open:      "max(",
-		separator: ",",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) MaxFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Complex renders the complex built-in function.
-func Complex(r Code, i Code) *Statement {
-	return newStatement().Complex(r, i)
-}
+func Complex(r Code, i Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Complex renders the complex built-in function.
-func (g *Group) Complex(r Code, i Code) *Statement {
-	s := Complex(r, i)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Complex(r Code, i Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Complex renders the complex built-in function.
-func (s *Statement) Complex(r Code, i Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     []Code{r, i},
-		multi:     false,
-		name:      "complex",
-		open:      "complex(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Complex(r Code, i Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Copy renders the copy built-in function.
-func Copy(dst Code, src Code) *Statement {
-	return newStatement().Copy(dst, src)
-}
+func Copy(dst Code, src Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Copy renders the copy built-in function.
-func (g *Group) Copy(dst Code, src Code) *Statement {
-	s := Copy(dst, src)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Copy(dst Code, src Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Copy renders the copy built-in function.
-func (s *Statement) Copy(dst Code, src Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     []Code{dst, src},
-		multi:     false,
-		name:      "copy",
-		open:      "copy(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Copy(dst Code, src Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Delete renders the delete built-in function.
-func Delete(m Code, key Code) *Statement {
-	return newStatement().Delete(m, key)
-}
+func Delete(m Code, key Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Delete renders the delete built-in function.
-func (g *Group) Delete(m Code, key Code) *Statement {
-	s := Delete(m, key)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Delete(m Code, key Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Delete renders the delete built-in function.
-func (s *Statement) Delete(m Code, key Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     []Code{m, key},
-		multi:     false,
-		name:      "delete",
-		open:      "delete(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Delete(m Code, key Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Imag renders the imag built-in function.
-func Imag(c Code) *Statement {
-	return newStatement().Imag(c)
-}
+func Imag(c Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Imag renders the imag built-in function.
-func (g *Group) Imag(c Code) *Statement {
-	s := Imag(c)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Imag(c Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Imag renders the imag built-in function.
-func (s *Statement) Imag(c Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     []Code{c},
-		multi:     false,
-		name:      "imag",
-		open:      "imag(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Imag(c Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Len renders the len built-in function.
-func Len(v Code) *Statement {
-	return newStatement().Len(v)
-}
+func Len(v Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Len renders the len built-in function.
-func (g *Group) Len(v Code) *Statement {
-	s := Len(v)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Len(v Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Len renders the len built-in function.
-func (s *Statement) Len(v Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     []Code{v},
-		multi:     false,
-		name:      "len",
-		open:      "len(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Len(v Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Make renders the make built-in function. The final parameter of the make function is optional, so it is represented by a variadic parameter list.
-func Make(args ...Code) *Statement {
-	return newStatement().Make(args...)
-}
+func Make(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Make renders the make built-in function. The final parameter of the make function is optional, so it is represented by a variadic parameter list.
-func (g *Group) Make(args ...Code) *Statement {
-	s := Make(args...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Make(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Make renders the make built-in function. The final parameter of the make function is optional, so it is represented by a variadic parameter list.
-func (s *Statement) Make(args ...Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     args,
-		multi:     false,
-		name:      "make",
-		open:      "make(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Make(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // New renders the new built-in function.
-func New(typ Code) *Statement {
-	return newStatement().New(typ)
-}
+func New(typ Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // New renders the new built-in function.
-func (g *Group) New(typ Code) *Statement {
-	s := New(typ)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) New(typ Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // New renders the new built-in function.
-func (s *Statement) New(typ Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     []Code{typ},
-		multi:     false,
-		name:      "new",
-		open:      "new(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) New(typ Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Panic renders the panic built-in function.
-func Panic(v Code) *Statement {
-	return newStatement().Panic(v)
-}
+func Panic(v Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Panic renders the panic built-in function.
-func (g *Group) Panic(v Code) *Statement {
-	s := Panic(v)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Panic(v Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Panic renders the panic built-in function.
-func (s *Statement) Panic(v Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     []Code{v},
-		multi:     false,
-		name:      "panic",
-		open:      "panic(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Panic(v Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Print renders the print built-in function.
-func Print(args ...Code) *Statement {
-	return newStatement().Print(args...)
-}
+func Print(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Print renders the print built-in function.
-func (g *Group) Print(args ...Code) *Statement {
-	s := Print(args...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Print(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Print renders the print built-in function.
-func (s *Statement) Print(args ...Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     args,
-		multi:     false,
-		name:      "print",
-		open:      "print(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Print(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // PrintFunc renders the print built-in function.
-func PrintFunc(f func(*Group)) *Statement {
-	return newStatement().PrintFunc(f)
-}
+func PrintFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // PrintFunc renders the print built-in function.
-func (g *Group) PrintFunc(f func(*Group)) *Statement {
-	s := PrintFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) PrintFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // PrintFunc renders the print built-in function.
-func (s *Statement) PrintFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     ")",
-		multi:     false,
-		name:      "print",
-		open:      "print(",
-		separator: ",",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) PrintFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Println renders the println built-in function.
-func Println(args ...Code) *Statement {
-	return newStatement().Println(args...)
-}
+func Println(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Println renders the println built-in function.
-func (g *Group) Println(args ...Code) *Statement {
-	s := Println(args...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Println(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Println renders the println built-in function.
-func (s *Statement) Println(args ...Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     args,
-		multi:     false,
-		name:      "println",
-		open:      "println(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Println(args ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // PrintlnFunc renders the println built-in function.
-func PrintlnFunc(f func(*Group)) *Statement {
-	return newStatement().PrintlnFunc(f)
-}
+func PrintlnFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // PrintlnFunc renders the println built-in function.
-func (g *Group) PrintlnFunc(f func(*Group)) *Statement {
-	s := PrintlnFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) PrintlnFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // PrintlnFunc renders the println built-in function.
-func (s *Statement) PrintlnFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     ")",
-		multi:     false,
-		name:      "println",
-		open:      "println(",
-		separator: ",",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) PrintlnFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Real renders the real built-in function.
-func Real(c Code) *Statement {
-	return newStatement().Real(c)
-}
+func Real(c Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Real renders the real built-in function.
-func (g *Group) Real(c Code) *Statement {
-	s := Real(c)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Real(c Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Real renders the real built-in function.
-func (s *Statement) Real(c Code) *Statement {
-	g := &Group{
-		close:     ")",
-		items:     []Code{c},
-		multi:     false,
-		name:      "real",
-		open:      "real(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Real(c Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Recover renders the recover built-in function.
-func Recover() *Statement {
-	return newStatement().Recover()
-}
+func Recover() *Statement { _ = "STUB: not implemented"; return nil }
 
 // Recover renders the recover built-in function.
-func (g *Group) Recover() *Statement {
-	s := Recover()
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Recover() *Statement { _ = "STUB: not implemented"; return nil }
 
 // Recover renders the recover built-in function.
-func (s *Statement) Recover() *Statement {
-	g := &Group{
-		close:     ")",
-		items:     []Code{},
-		multi:     false,
-		name:      "recover",
-		open:      "recover(",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Recover() *Statement { _ = "STUB: not implemented"; return nil }
 
 // Types renders a comma separated list enclosed by square brackets. Use for type parameters and constraints.
-func Types(types ...Code) *Statement {
-	return newStatement().Types(types...)
-}
+func Types(types ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Types renders a comma separated list enclosed by square brackets. Use for type parameters and constraints.
-func (g *Group) Types(types ...Code) *Statement {
-	s := Types(types...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Types(types ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Types renders a comma separated list enclosed by square brackets. Use for type parameters and constraints.
-func (s *Statement) Types(types ...Code) *Statement {
-	g := &Group{
-		close:     "]",
-		items:     types,
-		multi:     false,
-		name:      "types",
-		open:      "[",
-		separator: ",",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Types(types ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // TypesFunc renders a comma separated list enclosed by square brackets. Use for type parameters and constraints.
-func TypesFunc(f func(*Group)) *Statement {
-	return newStatement().TypesFunc(f)
-}
+func TypesFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // TypesFunc renders a comma separated list enclosed by square brackets. Use for type parameters and constraints.
-func (g *Group) TypesFunc(f func(*Group)) *Statement {
-	s := TypesFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) TypesFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // TypesFunc renders a comma separated list enclosed by square brackets. Use for type parameters and constraints.
-func (s *Statement) TypesFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     "]",
-		multi:     false,
-		name:      "types",
-		open:      "[",
-		separator: ",",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) TypesFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Union renders a pipe separated list. Use for union type constraints.
-func Union(types ...Code) *Statement {
-	return newStatement().Union(types...)
-}
+func Union(types ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Union renders a pipe separated list. Use for union type constraints.
-func (g *Group) Union(types ...Code) *Statement {
-	s := Union(types...)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Union(types ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Union renders a pipe separated list. Use for union type constraints.
-func (s *Statement) Union(types ...Code) *Statement {
-	g := &Group{
-		close:     "",
-		items:     types,
-		multi:     false,
-		name:      "union",
-		open:      "",
-		separator: "|",
-	}
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) Union(types ...Code) *Statement { _ = "STUB: not implemented"; return nil }
 
 // UnionFunc renders a pipe separated list. Use for union type constraints.
-func UnionFunc(f func(*Group)) *Statement {
-	return newStatement().UnionFunc(f)
-}
+func UnionFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // UnionFunc renders a pipe separated list. Use for union type constraints.
-func (g *Group) UnionFunc(f func(*Group)) *Statement {
-	s := UnionFunc(f)
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) UnionFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // UnionFunc renders a pipe separated list. Use for union type constraints.
-func (s *Statement) UnionFunc(f func(*Group)) *Statement {
-	g := &Group{
-		close:     "",
-		multi:     false,
-		name:      "union",
-		open:      "",
-		separator: "|",
-	}
-	f(g)
-	*s = append(*s, g)
-	return s
-}
+func (s *Statement) UnionFunc(f func(*Group)) *Statement { _ = "STUB: not implemented"; return nil }
 
 // Bool renders the bool identifier.
-func Bool() *Statement {
-	return newStatement().Bool()
-}
+func Bool() *Statement { _ = "STUB: not implemented"; return nil }
 
 // Bool renders the bool identifier.
-func (g *Group) Bool() *Statement {
-	s := Bool()
-	g.items = append(g.items, s)
-	return s
-}
+func (g *Group) Bool() *Statement { _ = "STUB: not implemented"; return nil }
 
 // Bool renders the bool identifier.
-func (s *Statement) Bool() *Statement {
-	t := token{
-		content: "bool",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
-}
+func (s *Statement) Bool() *Statement { _ = "STUB: not implemented"; return nil }
 
 // Byte renders the byte identifier.
 func Byte() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Byte()
+	return nil
 }
 
 // Byte renders the byte identifier.
 func (g *Group) Byte() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Byte()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Byte renders the byte identifier.
 func (s *Statement) Byte() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "byte",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Complex64 renders the complex64 identifier.
 func Complex64() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Complex64()
+	return nil
 }
 
 // Complex64 renders the complex64 identifier.
 func (g *Group) Complex64() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Complex64()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Complex64 renders the complex64 identifier.
 func (s *Statement) Complex64() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "complex64",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Complex128 renders the complex128 identifier.
 func Complex128() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Complex128()
+	return nil
 }
 
 // Complex128 renders the complex128 identifier.
 func (g *Group) Complex128() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Complex128()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Complex128 renders the complex128 identifier.
 func (s *Statement) Complex128() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "complex128",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Error renders the error identifier.
 func Error() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Error()
+	return nil
 }
 
 // Error renders the error identifier.
 func (g *Group) Error() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Error()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Error renders the error identifier.
 func (s *Statement) Error() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "error",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Float32 renders the float32 identifier.
 func Float32() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Float32()
+	return nil
 }
 
 // Float32 renders the float32 identifier.
 func (g *Group) Float32() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Float32()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Float32 renders the float32 identifier.
 func (s *Statement) Float32() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "float32",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Float64 renders the float64 identifier.
 func Float64() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Float64()
+	return nil
 }
 
 // Float64 renders the float64 identifier.
 func (g *Group) Float64() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Float64()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Float64 renders the float64 identifier.
 func (s *Statement) Float64() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "float64",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Int renders the int identifier.
 func Int() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Int()
+	return nil
 }
 
 // Int renders the int identifier.
 func (g *Group) Int() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Int()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Int renders the int identifier.
 func (s *Statement) Int() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "int",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Int8 renders the int8 identifier.
 func Int8() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Int8()
+	return nil
 }
 
 // Int8 renders the int8 identifier.
 func (g *Group) Int8() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Int8()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Int8 renders the int8 identifier.
 func (s *Statement) Int8() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "int8",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Int16 renders the int16 identifier.
 func Int16() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Int16()
+	return nil
 }
 
 // Int16 renders the int16 identifier.
 func (g *Group) Int16() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Int16()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Int16 renders the int16 identifier.
 func (s *Statement) Int16() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "int16",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Int32 renders the int32 identifier.
 func Int32() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Int32()
+	return nil
 }
 
 // Int32 renders the int32 identifier.
 func (g *Group) Int32() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Int32()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Int32 renders the int32 identifier.
 func (s *Statement) Int32() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "int32",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Int64 renders the int64 identifier.
 func Int64() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Int64()
+	return nil
 }
 
 // Int64 renders the int64 identifier.
 func (g *Group) Int64() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Int64()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Int64 renders the int64 identifier.
 func (s *Statement) Int64() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "int64",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Rune renders the rune identifier.
 func Rune() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Rune()
+	return nil
 }
 
 // Rune renders the rune identifier.
 func (g *Group) Rune() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Rune()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Rune renders the rune identifier.
 func (s *Statement) Rune() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "rune",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // String renders the string identifier.
 func String() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().String()
+	return nil
 }
 
 // String renders the string identifier.
 func (g *Group) String() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := String()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // String renders the string identifier.
 func (s *Statement) String() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "string",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Uint renders the uint identifier.
 func Uint() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Uint()
+	return nil
 }
 
 // Uint renders the uint identifier.
 func (g *Group) Uint() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Uint()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Uint renders the uint identifier.
 func (s *Statement) Uint() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "uint",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Uint8 renders the uint8 identifier.
 func Uint8() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Uint8()
+	return nil
 }
 
 // Uint8 renders the uint8 identifier.
 func (g *Group) Uint8() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Uint8()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Uint8 renders the uint8 identifier.
 func (s *Statement) Uint8() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "uint8",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Uint16 renders the uint16 identifier.
 func Uint16() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Uint16()
+	return nil
 }
 
 // Uint16 renders the uint16 identifier.
 func (g *Group) Uint16() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Uint16()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Uint16 renders the uint16 identifier.
 func (s *Statement) Uint16() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "uint16",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Uint32 renders the uint32 identifier.
 func Uint32() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Uint32()
+	return nil
 }
 
 // Uint32 renders the uint32 identifier.
 func (g *Group) Uint32() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Uint32()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Uint32 renders the uint32 identifier.
 func (s *Statement) Uint32() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "uint32",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Uint64 renders the uint64 identifier.
 func Uint64() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Uint64()
+	return nil
 }
 
 // Uint64 renders the uint64 identifier.
 func (g *Group) Uint64() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Uint64()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Uint64 renders the uint64 identifier.
 func (s *Statement) Uint64() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "uint64",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Uintptr renders the uintptr identifier.
 func Uintptr() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Uintptr()
+	return nil
 }
 
 // Uintptr renders the uintptr identifier.
 func (g *Group) Uintptr() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Uintptr()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Uintptr renders the uintptr identifier.
 func (s *Statement) Uintptr() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "uintptr",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // True renders the true identifier.
 func True() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().True()
+	return nil
 }
 
 // True renders the true identifier.
 func (g *Group) True() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := True()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // True renders the true identifier.
 func (s *Statement) True() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "true",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // False renders the false identifier.
 func False() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().False()
+	return nil
 }
 
 // False renders the false identifier.
 func (g *Group) False() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := False()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // False renders the false identifier.
 func (s *Statement) False() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "false",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Iota renders the iota identifier.
 func Iota() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Iota()
+	return nil
 }
 
 // Iota renders the iota identifier.
 func (g *Group) Iota() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Iota()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Iota renders the iota identifier.
 func (s *Statement) Iota() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "iota",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Nil renders the nil identifier.
 func Nil() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Nil()
+	return nil
 }
 
 // Nil renders the nil identifier.
 func (g *Group) Nil() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Nil()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Nil renders the nil identifier.
 func (s *Statement) Nil() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "nil",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Err renders the err identifier.
 func Err() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Err()
+	return nil
 }
 
 // Err renders the err identifier.
 func (g *Group) Err() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Err()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Err renders the err identifier.
 func (s *Statement) Err() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "err",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Any renders the any identifier.
 func Any() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Any()
+	return nil
 }
 
 // Any renders the any identifier.
 func (g *Group) Any() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Any()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Any renders the any identifier.
 func (s *Statement) Any() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "any",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Comparable renders the comparable identifier.
 func Comparable() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Comparable()
+	return nil
 }
 
 // Comparable renders the comparable identifier.
 func (g *Group) Comparable() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Comparable()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Comparable renders the comparable identifier.
 func (s *Statement) Comparable() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "comparable",
-		typ:     identifierToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Break renders the break keyword.
 func Break() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Break()
+	return nil
 }
 
 // Break renders the break keyword.
 func (g *Group) Break() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Break()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Break renders the break keyword.
 func (s *Statement) Break() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "break",
-		typ:     keywordToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Default renders the default keyword.
 func Default() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Default()
+	return nil
 }
 
 // Default renders the default keyword.
 func (g *Group) Default() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Default()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Default renders the default keyword.
 func (s *Statement) Default() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "default",
-		typ:     keywordToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Func renders the func keyword.
 func Func() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Func()
+	return nil
 }
 
 // Func renders the func keyword.
 func (g *Group) Func() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Func()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Func renders the func keyword.
 func (s *Statement) Func() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "func",
-		typ:     keywordToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Select renders the select keyword.
 func Select() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Select()
+	return nil
 }
 
 // Select renders the select keyword.
 func (g *Group) Select() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Select()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Select renders the select keyword.
 func (s *Statement) Select() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "select",
-		typ:     keywordToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Chan renders the chan keyword.
 func Chan() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Chan()
+	return nil
 }
 
 // Chan renders the chan keyword.
 func (g *Group) Chan() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Chan()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Chan renders the chan keyword.
 func (s *Statement) Chan() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "chan",
-		typ:     keywordToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Else renders the else keyword.
 func Else() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Else()
+	return nil
 }
 
 // Else renders the else keyword.
 func (g *Group) Else() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Else()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Else renders the else keyword.
 func (s *Statement) Else() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "else",
-		typ:     keywordToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Const renders the const keyword.
 func Const() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Const()
+	return nil
 }
 
 // Const renders the const keyword.
 func (g *Group) Const() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Const()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Const renders the const keyword.
 func (s *Statement) Const() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "const",
-		typ:     keywordToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Fallthrough renders the fallthrough keyword.
 func Fallthrough() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Fallthrough()
+	return nil
 }
 
 // Fallthrough renders the fallthrough keyword.
 func (g *Group) Fallthrough() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Fallthrough()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Fallthrough renders the fallthrough keyword.
 func (s *Statement) Fallthrough() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "fallthrough",
-		typ:     keywordToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Type renders the type keyword.
 func Type() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Type()
+	return nil
 }
 
 // Type renders the type keyword.
 func (g *Group) Type() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Type()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Type renders the type keyword.
 func (s *Statement) Type() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "type",
-		typ:     keywordToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Continue renders the continue keyword.
 func Continue() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Continue()
+	return nil
 }
 
 // Continue renders the continue keyword.
 func (g *Group) Continue() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Continue()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Continue renders the continue keyword.
 func (s *Statement) Continue() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "continue",
-		typ:     keywordToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Var renders the var keyword.
 func Var() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Var()
+	return nil
 }
 
 // Var renders the var keyword.
 func (g *Group) Var() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Var()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Var renders the var keyword.
 func (s *Statement) Var() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "var",
-		typ:     keywordToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Goto renders the goto keyword.
 func Goto() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Goto()
+	return nil
 }
 
 // Goto renders the goto keyword.
 func (g *Group) Goto() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Goto()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Goto renders the goto keyword.
 func (s *Statement) Goto() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "goto",
-		typ:     keywordToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Defer renders the defer keyword.
 func Defer() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Defer()
+	return nil
 }
 
 // Defer renders the defer keyword.
 func (g *Group) Defer() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Defer()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Defer renders the defer keyword.
 func (s *Statement) Defer() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "defer",
-		typ:     keywordToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Go renders the go keyword.
 func Go() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Go()
+	return nil
 }
 
 // Go renders the go keyword.
 func (g *Group) Go() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Go()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Go renders the go keyword.
 func (s *Statement) Go() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "go",
-		typ:     keywordToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
 
 // Range renders the range keyword.
 func Range() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	return newStatement().Range()
+	return nil
 }
 
 // Range renders the range keyword.
 func (g *Group) Range() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	s := Range()
-	g.items = append(g.items, s)
-	return s
+	return nil
 }
 
 // Range renders the range keyword.
 func (s *Statement) Range() *Statement {
+	_ = "STUB: not implemented"
 	// notest
-	t := token{
-		content: "range",
-		typ:     keywordToken,
-	}
-	*s = append(*s, t)
-	return s
+	return nil
 }
